@@ -3,6 +3,8 @@ var SUB = {};
 var WORD_LIST = [];
 var searchBox = $("#search-input");
 var resultList = $("#result-list");
+var showLimit = $("#show-limit");
+var limit = 10;
 
 var SUGGESTION_HTML = "<li class='list-group-item clearfix'>"+
                         "<h4>%s<span class='pull-right'>စာမျက်နှာ %s</span></h4>"+
@@ -10,6 +12,10 @@ var SUGGESTION_HTML = "<li class='list-group-item clearfix'>"+
                         "<p>%s</p>"+
                         "</li>";
 var SPLITER = "<span class='fa fa-angle-right'></span>";
+
+showLimit.change(function(){
+  limit = parseInt(showLimit.val());
+});
 
 // Build DataBase
 
@@ -49,17 +55,17 @@ findRoot(PDB);
 function clearSuggestion(){
   resultList.html("");
 }
-function addToSuggestion(word){
+function addToSuggestion(word, keyup){
   var html = SUGGESTION_HTML;
   var db;
   if( (db = DB[word]) ){
-    html = html.replace('%s', "<strong>"+word+"</strong>");
+    html = html.replace('%s', "<strong>"+word.replace(keyup, "<span class='highlight'>"+keyup+"</span>", "g")+"</strong>");
     html = html.replace('%s', db.page);
     html = html.replace('%s', db.indexAt.replace(",", SPLITER, "g") + word);
     resultList[0].innerHTML += html;
   } else if( SUB[word] ){
-    db = DB[SUB[word]];
-    html = html.replace('%s', "<strong>"+word+"</strong>");
+    db = DB[SUB[word].ref];
+    html = html.replace('%s', "<strong>"+word.replace(keyup, "<span class='highlight'>"+keyup+"</span>", "g")+"</strong>");
     html = html.replace('%s', db.page);
     html = html.replace('%s', db.indexAt.replace(",", SPLITER, "g") + word);
     resultList[0].innerHTML += html;
@@ -77,18 +83,25 @@ function wordFinder(word, limit){
         _res.push(WORD_LIST[i]);
       }
     } 
+
+    if(_res.length < limit){
+      for (; j < WORD_LIST.length; j++) {
+        if(WORD_LIST[j].match(rex) && _res.indexOf(WORD_LIST[j]) === -1){
+          _res.push(WORD_LIST[j]);
+        }
+      }
+    }
   }
   return _res;
 }
 
 searchBox.keyup(function(){
   clearSuggestion();
-  var wordsList = wordFinder(searchBox.val().trim());
-  var limit = wordsList.length < 10? wordsList.length: 10;
-  for(var i = 0; i < limit; i++){
-    addToSuggestion(wordsList[i]);
+  var keyup = searchBox.val().trim();
+  
+  var wordsList = wordFinder(keyup, limit);
+  var lm = wordsList.length < limit? wordsList.length: limit;
+  for(var i = 0; i < lm; i++){
+    addToSuggestion(wordsList[i], keyup);
   }
 });
-
-
-console.log(DB.class);

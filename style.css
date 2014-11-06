@@ -9,3 +9,13 @@
 .fa.fa-angle-right {
   margin: 0 5px;
 }
+
+.highlight {
+  background-color: rgba(223, 248, 169, 1);
+  border-radius: 4px;
+}
+
+.social a {
+  color: #333;
+  text-decoration: none;
+}
