@@ -1,0 +1,11 @@
+.container {
+  padding-top: 20px;
+}
+
+.panel-heading small {
+  color: #e3e3e3;
+}
+
+.fa.fa-angle-right {
+  margin: 0 5px;
+}

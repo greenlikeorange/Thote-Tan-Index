@@ -1,4 +1,4 @@
-{
+var PDB = {
   "ဒီဃနိကာယ်": {
     "သီလက္ခန်": {
       "ဗြဟ္မဇာလသုတ် ပရိဗ္ဗာဇကကထာ": "၀၁-၀၃",
@@ -233,26 +233,120 @@
     "သဂါထာဝဂ္ဂသံယုတ်": {
       "ဒဝေတသံယုတ်": {
         "နဠဝဂ်": {
-          page: "၂၀၈",
-          indexs: ["သြဃတရဏသုတ်","နိမောက္ခသုတ်","ဥပနီယသုတ်","အစ္စေန္တိသုတ်","ကတိဆိန္ဒသုတ်","ဇာဂရသုတ်","အပ္ပဋိဝိဒိတသုတ်","သုသမ္မုဌသုတ်","မာနကာမသုတ်","အရညသုတ်"]
+          "page": "၂၀၈",
+          "indexs": ["သြဃတရဏသုတ်","နိမောက္ခသုတ်","ဥပနီယသုတ်","အစ္စေန္တိသုတ်","ကတိဆိန္ဒသုတ်","ဇာဂရသုတ်","အပ္ပဋိဝိဒိတသုတ်","သုသမ္မုဌသုတ်","မာနကာမသုတ်","အရညသုတ်"]
         },
         "နန္ဒနဝဂ်": {
-          page: "၂၀၉",
-          indexs: ["နန္ဒနသုတ်","နန္ဒတိသုတ်","နတ္ထိပုတ္တသမသုတ်","ခတ္ထိယသုတ်","သဏမာနသုတ်","နိဒ္ဒါတန္ဒီသုတ်","ဒုက္ကရသုတ်","ဟိရီသုတ်","ကုဋိကာသုတ်","သမိန္ဒိသုတ်"]
+          "page": "၂၀၉",
+          "indexs": ["နန္ဒနသုတ်","နန္ဒတိသုတ်","နတ္ထိပုတ္တသမသုတ်","ခတ္ထိယသုတ်","သဏမာနသုတ်","နိဒ္ဒါတန္ဒီသုတ်","ဒုက္ကရသုတ်","ဟိရီသုတ်","ကုဋိကာသုတ်","သမိန္ဒိသုတ်"]
         },
         "သတ္တိဝဂ်": {
-          page: "၂၁၀",
-          indexs: ["သတ္တိသုတ်","ဖုသတိသုတ်","ဇဋာသုတ်","မနောနိဝါရဏသုတ်","အရဟနၲသုတ်","ပဇ္ဇောတသုတ်","သရသုတ်","မဟဒ္ဓနသုတ်","စတုစက္ကသုတ်","ဧဏိဇင်္ဂသုတ်"]
+          "page": "၂၁၀",
+          "indexs": ["သတ္တိသုတ်","ဖုသတိသုတ်","ဇဋာသုတ်","မနောနိဝါရဏသုတ်","အရဟနၲသုတ်","ပဇ္ဇောတသုတ်","သရသုတ်","မဟဒ္ဓနသုတ်","စတုစက္ကသုတ်","ဧဏိဇင်္ဂသုတ်"]
         },
         "သတုလ္လပကာယိကဝဂ်": {
-          page: "၂၁၁",
-          indexs: ["သဗ္ဘိသုတ်","မစ္ဆရိသုတ်","သာဓုသုတ်","နသန္တိသုတ်","ဥဇ္စျာနသညိသုတ်","သဒ္ဓါသုတ်","သမယသုတ်","သကလိကသုတ်","ပဌမ ပဇ္ဇုန္နဓီတုသုတ်","ဒုတိယ ပဇ္ဇုန္နဓီတုသုတ်"]
+          "page": "၂၁၁",
+          "indexs": ["သဗ္ဘိသုတ်","မစ္ဆရိသုတ်","သာဓုသုတ်","နသန္တိသုတ်","ဥဇ္စျာနသညိသုတ်","သဒ္ဓါသုတ်","သမယသုတ်","သကလိကသုတ်","ပဌမ ပဇ္ဇုန္နဓီတုသုတ်","ဒုတိယ ပဇ္ဇုန္နဓီတုသုတ်"]
         },
         "အာဒိတ္တဝဂ်": {
-          page: "၂၁၂",
-          indexs: ["အာဒိတ္တသုတ်","ကိံဒဒသုတ်","အန္နသုတ်","ဧကမူလသုတ်","အနောမသုတ်","အစ္ဆရာသုတ်","ဝနရောပသုတ်","ဇေတဝနသုတ်","မစ္ဆရိသုတ်","ဃဋိကာရသုတ်"]
+          "page": "၂၁၂",
+          "indexs": ["အာဒိတ္တသုတ်","ကိံဒဒသုတ်","အန္နသုတ်","ဧကမူလသုတ်","အနောမသုတ်","အစ္ဆရာသုတ်","ဝနရောပသုတ်","ဇေတဝနသုတ်","မစ္ဆရိသုတ်","ဃဋိကာရသုတ်"]
         }
       }
     }
   }
-} 
+};
+var DB = {};
+var SUB = {};
+var WORD_LIST = [];
+var searchBox = $("#search-input");
+var resultList = $("#result-list");
+
+var SUGGESTION_HTML = "<li class='list-group-item clearfix'>"+
+                        "<h4>%s<span class='pull-right'>စာမျက်နှာ %s</span></h4>"+
+                        "<hr>"+
+                        "<p>%s</p>"+
+                        "</li>";
+var SPLITER = "<span class='fa fa-angle-right'></span>";
+
+// Build DataBase
+
+function findRoot(root, rootOfroot){
+  var pg, ix, i = 0;
+  for(var key in root){
+    if(typeof root[key] === "string"){
+      DB[key] = {
+        page: root[key],
+        indexAt: rootOfroot || ""
+      };
+      WORD_LIST.push(key);
+    } else if( (pg = root[key].page) ){
+      ix = root[key].indexs;
+      DB[key] = {
+        page: pg,
+        indexAt: rootOfroot || "",
+        include: ix
+      };
+      WORD_LIST.push(key);
+      for(; i < ix.length; i++){
+        SUB[ix[i]] = {
+          ref: key
+        };
+        WORD_LIST.push(ix[i]);
+      }
+    } else {
+      findRoot(
+        root[key], key+","
+      );
+    }
+  }
+}
+
+
+findRoot(PDB);
+function clearSuggestion(){
+  resultList.html("");
+}
+function addToSuggestion(word){
+  var html = SUGGESTION_HTML;
+  var db;
+  if( (db = DB[word]) ){
+    html = html.replace('%s', "<strong>"+word+"</strong>");
+    html = html.replace('%s', db.page);
+    html = html.replace('%s', db.indexAt.replace(",", SPLITER, "g") + word);
+    resultList[0].innerHTML += html;
+  } else if( SUB[word] ){
+    db = DB[SUB[word]];
+    html = html.replace('%s', "<strong>"+word+"</strong>");
+    html = html.replace('%s', db.page);
+    html = html.replace('%s', db.indexAt.replace(",", SPLITER, "g") + word);
+    resultList[0].innerHTML += html;
+  }
+}
+
+function wordFinder(word, limit){
+  var _res = [],
+      i = 0, j = 0;
+  var rex = new RegExp(word, "g");
+  var Smatch = new RegExp("^"+word);
+  if(word.length > 0){
+    for(; i < WORD_LIST.length; i++){
+      if(WORD_LIST[i].match(Smatch)){
+        _res.push(WORD_LIST[i]);
+      }
+    } 
+  }
+  return _res;
+}
+
+searchBox.keyup(function(){
+  clearSuggestion();
+  var wordsList = wordFinder(searchBox.val().trim());
+  var limit = wordsList.length < 10? wordsList.length: 10;
+  for(var i = 0; i < limit; i++){
+    addToSuggestion(wordsList[i]);
+  }
+});
+
+
+console.log(DB.class);
